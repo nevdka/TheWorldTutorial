@@ -5,8 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Include="Controllers\Web\AppController.cs" />
     <Content Include="wwwroot\css\site.css" />
     <Content Include="wwwroot\img\user1.jpg" />
+    <Content Include="wwwroot\js\site.js" />
   </ItemGroup>
 
   <ItemGroup>
@@ -15,6 +17,7 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.0.0" />
     <PackageReference Include="Microsoft.AspNetCore" Version="1.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.1.2" />
     <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="1.1.1" />
   </ItemGroup>
 

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -10,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using TheWorld.Models;
 using TheWorld.Services;
+using TheWorld.ViewModels;
 
 namespace TheWorld
 {
@@ -44,6 +46,8 @@ namespace TheWorld
 
             services.AddScoped<IWorldRepository, WorldRepository>();
 
+            services.AddTransient<GeoCoordsService>();
+
             services.AddTransient<WorldContextSeedData>();
 
             services.AddLogging();
@@ -58,6 +62,11 @@ namespace TheWorld
             ILoggerFactory loggerFactory,
             WorldContextSeedData seeder)
         {
+            Mapper.Initialize( config =>
+             {
+                 config.CreateMap<TripViewModel, Trip>().ReverseMap();
+                 config.CreateMap<StopViewModel, Stop>().ReverseMap();
+             } );
 
             if(env.IsDevelopment())
             {

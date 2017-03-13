@@ -1,6 +1,6 @@
 {
   "MailSettings": {
-    "ToAddress": "shawn@wildermuth.com"
+    "ToAddress": "totallyfakemeailaddress@totallyfakeemail.org"
   },
   "ConnectionStrings": {
     "WorldContextConnection": "Server=(localdb)\\MSSQLLocalDB;Database=TheWorldDb;Trusted_Connection=true;MultipleActiveResultSets=true"

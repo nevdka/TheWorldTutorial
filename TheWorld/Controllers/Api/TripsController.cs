@@ -47,6 +47,7 @@ namespace TheWorld.Controllers.Api
             if ( ModelState.IsValid )
             {
                 var newTrip = Mapper.Map<Trip>( theTrip );
+                newTrip.UserName = this.User.Identity.Name;
                 _repository.AddTrip( newTrip );
 
                 if ( await _repository.SaveChangesAsync() )
